@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.right {
+  float: right;
+}
+input {
+  margin-bottom: 1em !important;
+  margin-left: 0.5em !important;
+}
