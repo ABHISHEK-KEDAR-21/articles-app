@@ -45,7 +45,7 @@ function Articles() {
     }
 
     function showDetails(article) {
-        history.push('/article-details', article)
+        history?.push('/article-details', article)
     }
 
     return (
