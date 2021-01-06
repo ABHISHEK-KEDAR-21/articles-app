@@ -17,7 +17,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <Segment>
+                <Segment textAlign='center'>
                     Username:<Input type='text' value={this.state.username} onChange={(e) => { this.setState({ username: e.target.value }) }}></Input>
                     <br />
                     Password:<Input type='password' value={this.state.password} onChange={(e) => { this.setState({ password: e.target.value }) }}></Input>
