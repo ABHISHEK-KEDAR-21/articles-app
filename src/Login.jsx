@@ -10,7 +10,7 @@ class Login extends React.Component {
         }
     }
     componentDidMount() {
-        if (sessionStorage.getItem('login') == 1) {
+        if (parseInt(sessionStorage.getItem('login') ?? 0) === 1) {
             this.props.history.push('/articles')
         }
     }
@@ -22,7 +22,7 @@ class Login extends React.Component {
                     <br />
                     Password:<Input type='password' value={this.state.password} onChange={(e) => { this.setState({ password: e.target.value }) }}></Input>
                     <br />
-                    <Button onClick={() => { const _ = this.state.username === 'admin' && this.state.password === 'password' ? this.props.history.push('/articles') : null; sessionStorage.setItem('login', 1) }}>Login</Button>
+                    <Button onClick={() => { if (this.state.username === 'admin' && this.state.password === 'password') { this.props.history.push('/articles'); sessionStorage.setItem('login', 1); } }}>Login</Button>
                 </Segment>
             </div>
         )
